@@ -7,12 +7,12 @@ group 'org.sample'
 version '1.0-SNAPSHOT'
 
 dependencies {
-    compileOnly spigot('1.19')
+    compileOnly spigot('1.17.1')
 }
 
 spigot {
     authors = ['SkyExcel']
-    apiVersion = '1.19'
+    apiVersion = '1.17'
     name = 'banblock'
     load = STARTUP
     commands {
@@ -38,5 +38,11 @@ spigot {
 }
 
 jar {
-    destinationDirectory.set(file('D:\\Project\\minecraft\\Commission\\플러그인테스트\\1.19\\plugins'))
+    destinationDirectory.set(file('D:\\Project\\minecraft\\Commission\\플러그인테스트\\1.17.1\\plugins'))
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(16))
+    }
 }
