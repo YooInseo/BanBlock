@@ -96,8 +96,6 @@ public class ConfigManager {
         if(getConfig().get(path) == null){
             this.getConfig().set(path, new ArrayList<>());
             this.saveConfig();
-        }  else {
-            System.out.print("해당 리스트는 이미 생성 되었습니다.");
         }
     }
 

@@ -31,25 +31,39 @@ public class Main extends JavaPlugin {
         getCommand("밴블록").setExecutor(new cmd());
         getCommand("밴블록").setTabCompleter(new cmdtab());
 
-        Listener[] events = {new ClickEvent(),new CloseEvent(),new PlaceEvent()};
+        Listener[] events = {new ClickEvent(), new CloseEvent(), new PlaceEvent()};
         PluginManager pm = Bukkit.getPluginManager();
         Arrays.stream(events).forEach(classes -> {
             pm.registerEvents(classes, this);
         });
 
-       init();
+        init();
     }
-    public void init(){
+
+    @Override
+    public void onDisable() {
+        Bukkit.getOnlinePlayers().forEach(players -> {
+            if(data.containsKey(players.getUniqueId())){
+                if (players.getOpenInventory().getTopInventory().equals(data.get(players.getUniqueId()).getPageclass().getInv())) {
+                    players.closeInventory();
+                }
+
+            }
+
+        });
+    }
+
+    public void init() {
         ArrayList<String> names = new ArrayList<>();
 
         for (World worlds : Bukkit.getWorlds()) {
             names.add(worlds.getName());
-            if(config.getConfig().getList(worlds.getName() +".banblocks") == null){
-                plugin.config.getConfig().set(worlds.getName() +".banblocks", new ArrayList<>());
+            if (config.getConfig().getList(worlds.getName() + ".banblocks") == null) {
+                plugin.config.getConfig().set(worlds.getName() + ".banblocks", new ArrayList<>());
             }
         }
 
-        if(config.getConfig().getList("all") == null){
+        if (config.getConfig().getList("all") == null) {
             plugin.config.getConfig().set("all.banblocks", new ArrayList<>());
         }
 
@@ -64,11 +78,11 @@ public class Main extends JavaPlugin {
         }
 
 
-        if(config.getConfig().getList("worlds") == null){
+        if (config.getConfig().getList("worlds") == null) {
             plugin.config.getConfig().set("worlds", blockname);
         }
 
-        config.setString("CancelMessage","");
+        config.setString("CancelMessage", "");
 
         Main.plugin.config.saveConfig();
 

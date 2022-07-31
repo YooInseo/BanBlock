@@ -30,7 +30,7 @@ public class ClickEvent implements Listener {
 
                         if (event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(StringData.NextPageName)) {
                             data.getPageclass().increase(player);
-                        } else if(event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(StringData.PreviousPageName)) {
+                        } else if (event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(StringData.PreviousPageName)) {
                             data.getPageclass().decrease(player);
                         }
                     } else {
@@ -45,8 +45,6 @@ public class ClickEvent implements Listener {
                     }
                     event.setCancelled(true);
                 }
-            } else {
-                player.sendMessage("§c페이지 데이타가 존재 하지 않습니다. 기본 명령어를 입력해 주세요!");
             }
 
         }

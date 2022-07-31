@@ -1,0 +1,7 @@
+# 프로젝트 제외 경로
+/.gradle/
+/build/
+/build/classes/java/main/
+/V1.19/.gradle/
+/V1.19/build/
+/V1.19/build/classes/java/main/
