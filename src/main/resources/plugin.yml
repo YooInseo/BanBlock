@@ -1,0 +1,15 @@
+name: BanBlock
+main: main.Main
+authors: [SkyExcel]
+description: Minecraft Popularity Plugin.
+
+version: 0.1
+api-version: 1.13
+
+commands:
+  teleport:
+    aliases: [tp,텔레포트]
+    description: Teleport Command
+  밴블록:
+    aliases: [banblock]
+    description: /banblock <worldname> - You can Open the world's ban block GUI

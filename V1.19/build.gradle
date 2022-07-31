@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'kr.entree.spigradle' version '2.4.2'
+}
+
+group 'org.sample'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compileOnly spigot('1.19')
+}
+
+spigot {
+    apiVersion = "1.19"
+    name 'banblock'
+    commands {
+        create("밴블록") {
+
+        }
+    }
+}
+
+jar {
+    destinationDirectory.set(file('D:\\Project\\minecraft\\Commission\\플러그인테스트\\1.19\\plugins'))
+}
