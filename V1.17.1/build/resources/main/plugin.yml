@@ -1,0 +1,24 @@
+main: main.Main
+name: banblock
+version: 1.0-SNAPSHOT
+authors:
+ - SkyExcel
+api-version: 1.17
+load: STARTUP
+commands:
+  banblock:
+    description: Manage the banblock
+    usage: §7/banblock <world>
+    permission: banblock.manage
+    permission-message: You do not have permission!
+    aliases:
+     - 밴블록
+permissions:
+  banblock.*:
+    description: Wildcard permission
+    default: op
+    children:
+      banblock.manage: true
+  banblock.manage:
+    description: Manage the banblock
+    default: "true"
