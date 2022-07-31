@@ -16,6 +16,15 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/V1.16.5" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/V1.16.5" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/V1.17.1" />
         <option name="modules">
           <set>
