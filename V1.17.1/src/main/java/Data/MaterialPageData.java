@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class MaterialPageData {
     private int CurrentPage = 1;
     private int PageSize = 44;
-    private int totalPage = 16;
+    private int totalPage = 15;
     private Inventory inv;
     private String title;
     private String world;
@@ -97,7 +97,8 @@ public class MaterialPageData {
     public String setTitle(String name) {
         title = "";
 
-        title = name + " (" + getCurrentPage() + "/16)";
+        title = name + " (" + getCurrentPage() + "/" + totalPage + ")";
+
         return title;
     }
 
