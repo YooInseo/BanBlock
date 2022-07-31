@@ -19,7 +19,8 @@ public class PlaceEvent implements Listener {
 
         Data data = Main.plugin.data.get(player.getUniqueId());
         ArrayList<String> materials = (ArrayList<String>) Main.plugin.config.getConfig().getList(player.getWorld().getName()+ ".banblocks");
-        if(materials.contains(block.getType().name())){
+        ArrayList<String> allmaterials = (ArrayList<String>) Main.plugin.config.getConfig().getList(  "all.banblocks");
+        if(materials.contains(block.getType().name()) || allmaterials.contains(block.getType().name())){
             String test = Main.plugin.config.getString("CancelMessage");
 
             player.sendMessage(test);

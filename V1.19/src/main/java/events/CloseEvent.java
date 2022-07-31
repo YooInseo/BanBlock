@@ -11,5 +11,6 @@ public class CloseEvent implements Listener {
     public void onClose(InventoryCloseEvent event) {
         Inventory inv = event.getInventory();
         Player player = (Player) event.getPlayer();
+
     }
 }

@@ -17,7 +17,7 @@ public class cmdtab implements TabCompleter  {
         if(args.length == 1){
 
             ArrayList<String> worlds = (ArrayList<String>) Main.plugin.config.getConfig().getList("worlds");
-
+            worlds.add("all");
             for(int i = 0; i < worlds.size() ; i++){
                 arguments.add(worlds.get(i));
 

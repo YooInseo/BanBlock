@@ -15,8 +15,8 @@ public class cmd implements CommandExecutor {
         Player player = (Player) sender;
 
         if (args.length == 0) {
-            Data data = new Data(player);
-            data.init();
+            player.sendMessage("§7/banblock <worldname>");
+            player.sendMessage("§7/밴블록 <worldname>");
 
         } else{
             if(args[0].equalsIgnoreCase("reload")) {
